@@ -1,12 +1,13 @@
 {
   "name": "expression.ts",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "TypeScript expressions interface",
   "main": "",
   "directories": {
     "test": "tests"
   },
   "scripts": {
+    "install": "mkdir lib || cp ./node_modules/expression.ts/src/expression.ts ./lib/expression.ts",
     "test": "karma start --single-run"
   },
   "repository": {
