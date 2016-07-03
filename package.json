@@ -1,7 +1,7 @@
 {
   "name": "expression.ts",
   "version": "1.0.0",
-  "description": "",
+  "description": "TypeScript expressions interface",
   "main": "",
   "directories": {
     "test": "tests"

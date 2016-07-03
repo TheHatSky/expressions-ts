@@ -3,7 +3,7 @@ Expression
 
 [![build status](https://gitlab.com/thehat/expression.ts/badges/master/build.svg)](https://gitlab.com/thehat/expression.ts/commits/master)
 
-A wrapper over function containing property expression.
+TypeScript expressions interface.
 
 `Expression<TType, TResult>` is an interface that extends `Function`. Module `Expression` contains following methods:
 
