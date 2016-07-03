@@ -8,21 +8,23 @@ A wrapper over function containing property expression.
 `Expression<TType, TResult>` is an interface that extends `Function`. Module `Expression` contains following methods:
 
 ```typescript
-/*
- * Throws errors if given function is not a valid property expression.
- */
-validate<TType, TResult>(exp: Expression<TType, TResult>) : void
+module Expression
+{
+    /*
+    * Throws errors if given function is not a valid property expression.
+    */
+    export const validate<TType, TResult>(exp: Expression<TType, TResult>) : void
 
-/*
- * Validates given function and applies it to `target`.
- */
-apply<TType, TResult>(exp: Expression<TType, TResult>, target: TType) : TResult
+    /*
+    * Validates given function and applies it to `target`.
+    */
+    export const apply<TType, TResult>(exp: Expression<TType, TResult>, target: TType) : TResult
 
-/*
- * Validates given function and gets property name. Useful for immutable.js.
- */
-getProperty<TType, TResult>(exp: Expression<TType, TResult>) : string
-
+    /*
+    * Validates given function and gets property name. Useful for immutable.js.
+    */
+    export const getProperty<TType, TResult>(exp: Expression<TType, TResult>) : string
+}
 ```
 
 Usage
@@ -50,11 +52,11 @@ const logInfo = <TResult>(exp: Expression<Model, TResult>) =>
 
 logInfo(m => m.value)
 // Expression over property: value
-// Has a velue "modelThing"
+// Has a value "modelThing"
 
 logInfo(m => m.numberValue)
 // Expression over property: numberValue
-// Has a velue 12351
+// Has a value 12351
 
 logInfo(m => {
     console.log("This should throw an error");
