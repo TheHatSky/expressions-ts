@@ -1,0 +1,26 @@
+image: registry.gitlab.com/thehat/expression.ts:latest
+
+cache:
+    key: "$CI_BUILD_REF_NAME"
+    paths:
+        - node_modules/
+
+stages:
+- build
+- test
+
+build:
+    stage: build
+    script:
+        - npm install -g tsd typescript
+        - npm install
+        - tsd install
+        - tsc
+    artifacts:
+        paths:
+            - js/
+
+test:
+    stage: test
+    script:
+        - npm test
