@@ -183,7 +183,7 @@ module Expression
             if (expressionParts.token != expressionToken)
                 throw new Error(`Expression body is not correlated to token. Body: "${expressionParts.propertyExpressionBody}", token: "${expressionParts.token}".`);
 
-            let restrictedSymbols = [",", "(", ")", "{", "}", "+", "-", "!", "?", "<", ">", "*", "/"];
+            let restrictedSymbols = [",", "(", ")", "{", "}", "+", "-", "!", "?", "<", ">", "*", "/", "="];
             restrictedSymbols.forEach(symbol => {
                 if (property.indexOf(symbol) >= 0)
                     throw new Error(`Invalid property expression. Body: "${expressionParts.propertyExpressionBody}".`);

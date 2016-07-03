@@ -194,4 +194,13 @@ describe("An expression", () =>
 
         expect(isValid).toThrowError("Invalid property expression. Body: \"target.func()\".");
     });
+
+    it("should not be an assignment statement.", () =>
+    {
+        let expression: Expression<A, void> = (target) => target.value = "asd";
+
+        let isValid = () => Expression.validate(expression);
+
+        expect(isValid).toThrowError("Invalid property expression. Body: \"target.value = \"asd\"\".");
+    });
 });
