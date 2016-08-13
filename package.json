@@ -1,6 +1,6 @@
 {
   "name": "expression-ts",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "TypeScript expressions interface",
   "main": "index.js",
   "typings": "index",
