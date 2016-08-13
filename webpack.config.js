@@ -1,7 +1,7 @@
 module.exports = {
-    entry: './ts/index.ts',
+    entry: './ts/expression/expression.ts',
     output: {
-        filename: './js/index.js'
+        filename: './js/expression/expression.js'
     },
     resolve: {
         // Add `.ts` and `.tsx` as a resolvable extension.
