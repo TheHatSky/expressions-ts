@@ -21,6 +21,7 @@
   },
   "homepage": "https://gitlab.com/thehat/expression-ts#README",
   "devDependencies": {
+    "constant.ts": "^1.1.0",
     "jasmine": "^2.4.1",
     "karma": "^1.2.0",
     "karma-cli": "^1.0.1",
