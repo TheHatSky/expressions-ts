@@ -1,4 +1,4 @@
 /node_modules
-/js
+/js/**/*.d.ts
 /typings
 /.DS_Store

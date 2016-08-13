@@ -1,5 +1,8 @@
-/// <reference path="../typings/tsd.d.ts" />
-/// <reference path="../src/expression.ts" />
+/// <reference path="../../typings/tsd.d.ts" />
+
+import * as Expression from "../expression/expression";
+import * as Internals from "../expression/internals";
+import "../../lib/jasmine";
 
 class A
 {
@@ -13,7 +16,7 @@ describe("An arrow expression source code", () =>
     {
         let sourceCode = "some => some.simpleString =>";
 
-        let isValidArrowFunc = () => Expression.__Internals.validateLambda(sourceCode);
+        let isValidArrowFunc = () => Internals.validateLambda(sourceCode);
 
         expect(isValidArrowFunc).toThrowError(`Source code contains too much arrows (=>). Code: "${sourceCode}".`);
     });
@@ -22,7 +25,7 @@ describe("An arrow expression source code", () =>
     {
         let sourceCode = "some some.simpleString";
 
-        let isValidArrowFunc = () => Expression.__Internals.validateLambda(sourceCode);
+        let isValidArrowFunc = () => Internals.validateLambda(sourceCode);
 
         expect(isValidArrowFunc).toThrowError(`Source code doesn't contain arrow (=>). Code: "${sourceCode}".`);
     });
@@ -31,7 +34,7 @@ describe("An arrow expression source code", () =>
     {
         let sourceCode = " => some.simpleString";
 
-        let isValidArrowFunc = () => Expression.__Internals.validateLambda(sourceCode);
+        let isValidArrowFunc = () => Internals.validateLambda(sourceCode);
 
         expect(isValidArrowFunc).toThrowError("Expression token is empty.");
     });
@@ -40,7 +43,7 @@ describe("An arrow expression source code", () =>
     {
         let sourceCode = "some => ";
 
-        let isValidArrowFunc = () => Expression.__Internals.validateLambda(sourceCode);
+        let isValidArrowFunc = () => Internals.validateLambda(sourceCode);
 
         expect(isValidArrowFunc).toThrowError("Expression body is empty.");
     });
@@ -49,7 +52,7 @@ describe("An arrow expression source code", () =>
     {
         let sourceCode = "some => test.test";
 
-        let isValidArrowFunc = () => Expression.__Internals.validateLambda(sourceCode);
+        let isValidArrowFunc = () => Internals.validateLambda(sourceCode);
 
         expect(isValidArrowFunc).toThrowError("Expression body is not correlated to token. Body: \"test.test\", token: \"some\".");
     });
@@ -58,7 +61,7 @@ describe("An arrow expression source code", () =>
     {
         let sourceCode = "some => test";
 
-        let isValidArrowFunc = () => Expression.__Internals.validateLambda(sourceCode);
+        let isValidArrowFunc = () => Internals.validateLambda(sourceCode);
 
         expect(isValidArrowFunc).toThrowError("Expression body is not a property expression. Body: \"test\".");
     });
@@ -67,7 +70,7 @@ describe("An arrow expression source code", () =>
     {
         let sourceCode = "some => some.test.test2";
 
-        let isValidArrowFunc = () => Expression.__Internals.validateLambda(sourceCode);
+        let isValidArrowFunc = () => Internals.validateLambda(sourceCode);
 
         expect(isValidArrowFunc).toThrowError("Expression body is not a simple property expression. Body: \"some.test.test2\".");
     });
@@ -76,7 +79,7 @@ describe("An arrow expression source code", () =>
     {
         let sourceCode = "some => some.simpleString";
 
-        let validateFunc = () => Expression.__Internals.validateLambda(sourceCode);
+        let validateFunc = () => Internals.validateLambda(sourceCode);
 
         expect(validateFunc).not.toThrow();
     });
@@ -88,7 +91,7 @@ describe("An es3 function expression source code", () =>
     {
         let sourceCode = "fun (some) { return some.simpleString }";
 
-        let isValidArrowFunc = () => Expression.__Internals.validateFunction(sourceCode);
+        let isValidArrowFunc = () => Internals.validateFunction(sourceCode);
 
         expect(isValidArrowFunc).toThrowError(`Expression is not a function. Code: "${sourceCode}".`);
     });
@@ -97,7 +100,7 @@ describe("An es3 function expression source code", () =>
     {
         let sourceCode = "function x) { return some.simpleString }";
 
-        let isValidArrowFunc = () => Expression.__Internals.validateFunction(sourceCode);
+        let isValidArrowFunc = () => Internals.validateFunction(sourceCode);
 
         expect(isValidArrowFunc).toThrowError(`Expression is not a function. Code: "${sourceCode}".`);
     });
@@ -106,7 +109,7 @@ describe("An es3 function expression source code", () =>
     {
         let sourceCode = "function (x { return some.simpleString }";
 
-        let isValidArrowFunc = () => Expression.__Internals.validateFunction(sourceCode);
+        let isValidArrowFunc = () => Internals.validateFunction(sourceCode);
 
         expect(isValidArrowFunc).toThrowError(`Expression is not a function. Code: "${sourceCode}".`);
     });
@@ -115,7 +118,7 @@ describe("An es3 function expression source code", () =>
     {
         let sourceCode = "function (test, test2) { return some.simpleString }";
 
-        let isValidArrowFunc = () => Expression.__Internals.validateFunction(sourceCode);
+        let isValidArrowFunc = () => Internals.validateFunction(sourceCode);
 
         expect(isValidArrowFunc).toThrowError(`Expression is not a single argument function. Code: "${sourceCode}".`);
     });
@@ -124,7 +127,7 @@ describe("An es3 function expression source code", () =>
     {
         let sourceCode = "function () { return some.simpleString }";
 
-        let isValidArrowFunc = () => Expression.__Internals.validateFunction(sourceCode);
+        let isValidArrowFunc = () => Internals.validateFunction(sourceCode);
 
         expect(isValidArrowFunc).toThrowError("Expression token is empty.");
     });
@@ -133,7 +136,7 @@ describe("An es3 function expression source code", () =>
     {
         let sourceCode = "function (text) { test(); }";
 
-        let isValidArrowFunc = () => Expression.__Internals.validateFunction(sourceCode);
+        let isValidArrowFunc = () => Internals.validateFunction(sourceCode);
 
         expect(isValidArrowFunc).toThrowError(`Expression is not a single return statement. Code: "${sourceCode}".`);
     });
@@ -142,7 +145,7 @@ describe("An es3 function expression source code", () =>
     {
         let sourceCode = "function (text) { return; }";
 
-        let isValidArrowFunc = () => Expression.__Internals.validateFunction(sourceCode);
+        let isValidArrowFunc = () => Internals.validateFunction(sourceCode);
 
         expect(isValidArrowFunc).toThrowError("Expression body is empty.");
     });
@@ -151,7 +154,7 @@ describe("An es3 function expression source code", () =>
     {
         let sourceCode = "function (some) { return test.test; }";
 
-        let isValidArrowFunc = () => Expression.__Internals.validateFunction(sourceCode);
+        let isValidArrowFunc = () => Internals.validateFunction(sourceCode);
 
         expect(isValidArrowFunc).toThrowError("Expression body is not correlated to token. Body: \"test.test\", token: \"some\".");
     });
@@ -160,7 +163,7 @@ describe("An es3 function expression source code", () =>
     {
         let sourceCode = "function (some) { return test; }";
 
-        let isValidArrowFunc = () => Expression.__Internals.validateFunction(sourceCode);
+        let isValidArrowFunc = () => Internals.validateFunction(sourceCode);
 
         expect(isValidArrowFunc).toThrowError("Expression body is not a property expression. Body: \"test\".");
     });
@@ -169,7 +172,7 @@ describe("An es3 function expression source code", () =>
     {
         let sourceCode = "function (some) { return some.test.test2; }";
 
-        let isValidArrowFunc = () => Expression.__Internals.validateFunction(sourceCode);
+        let isValidArrowFunc = () => Internals.validateFunction(sourceCode);
 
         expect(isValidArrowFunc).toThrowError("Expression body is not a simple property expression. Body: \"some.test.test2\".");
     });
@@ -178,7 +181,7 @@ describe("An es3 function expression source code", () =>
     {
         let sourceCode = "function (some) { return some.test; }";
 
-        let validateArrowFunc = () => Expression.__Internals.validateFunction(sourceCode);
+        let validateArrowFunc = () => Internals.validateFunction(sourceCode);
 
         expect(validateArrowFunc).not.toThrow();
     });
@@ -188,7 +191,7 @@ describe("An expression", () =>
 {
     it("should not be a function call.", () =>
     {
-        let expression: Expression<A, void> = (target) => target.func();
+        let expression: Expression.IExpression<A, void> = (target) => target.func();
 
         let isValid = () => Expression.validate(expression);
 
@@ -197,7 +200,7 @@ describe("An expression", () =>
 
     it("should not be an assignment statement.", () =>
     {
-        let expression: Expression<A, void> = (target) => target.value = "asd";
+        let expression: Expression.IExpression<A, void> = (target) => target.value = "asd";
 
         let isValid = () => Expression.validate(expression);
 

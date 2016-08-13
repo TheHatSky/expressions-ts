@@ -1,8 +1,9 @@
 {
-  "name": "expression.ts",
-  "version": "1.0.4",
+  "name": "expression-ts",
+  "version": "1.0.0",
   "description": "TypeScript expressions interface",
-  "main": "src/expression.ts",
+  "main": "index.js",
+  "typings": "index",
   "directories": {
     "test": "tests"
   },
@@ -11,21 +12,24 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@gitlab.com/thehat/expression.ts.git"
+    "url": "git+ssh://git@gitlab.com/thehat/expression-ts.git"
   },
   "author": "Artem Sakhatskiy",
   "license": "ISC",
   "bugs": {
-    "url": "https://gitlab.com/thehat/expression.ts/issues"
+    "url": "https://gitlab.com/thehat/expression-ts/issues"
   },
-  "homepage": "https://gitlab.com/thehat/expression.ts#README",
+  "homepage": "https://gitlab.com/thehat/expression-ts#README",
   "devDependencies": {
     "jasmine": "^2.4.1",
     "karma": "^0.13.22",
+    "karma-cli": "^1.0.1",
     "karma-jasmine": "^1.0.2",
     "karma-mocha-reporter": "^2.0.4",
     "karma-phantomjs-launcher": "^1.0.0",
     "karma-source-map-support": "^1.1.0",
-    "phantomjs-prebuilt": "^2.1.7"
+    "phantomjs-prebuilt": "^2.1.7",
+    "ts-loader": "^0.8.2",
+    "webpack": "^1.13.1"
   }
 }

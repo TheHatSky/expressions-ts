@@ -1,4 +1,4 @@
-image: registry.gitlab.com/thehat/expression.ts:latest
+image: registry.gitlab.com/thehat/expression-ts:latest
 
 cache:
     key: "$CI_BUILD_REF_NAME"
@@ -16,6 +16,9 @@ build:
         - npm install
         - tsd install
         - tsc
+        - npm link typescript
+        - webpack
+        - webpack --config=webpack.test.config.js
     artifacts:
         paths:
             - js/

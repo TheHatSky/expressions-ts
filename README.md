@@ -1,7 +1,7 @@
 Expression
 ========
 
-[![build status](https://gitlab.com/thehat/expression.ts/badges/master/build.svg)](https://gitlab.com/thehat/expression.ts/commits/master)
+[![build status](https://gitlab.com/thehat/expression-ts/badges/master/build.svg)](https://gitlab.com/thehat/expression-ts/commits/master)
 
 TypeScript expressions interface.
 
@@ -28,6 +28,9 @@ Usage
 -----
 
 ```typescript
+
+import * as Expression from 'expression-ts'
+
 class Model
 {
     value: string;
@@ -38,7 +41,7 @@ let model = new Model();
 model.value = "modelThing";
 model.numberValue = 12351;
 
-const logInfo = <TResult>(exp: Expression<Model, TResult>) =>
+const logInfo = <TResult>(exp: Expression.IExpression<Model, TResult>) =>
 {
     Expression.validate(exp);
 
