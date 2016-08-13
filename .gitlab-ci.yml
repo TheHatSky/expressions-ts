@@ -12,7 +12,7 @@ stages:
 build:
     stage: build
     script:
-        - npm install -g tsd typescript
+        - npm install -g tsd typescript webpack
         - npm install
         - tsd install
         - tsc
