@@ -1,6 +1,6 @@
 {
-  "name": "expression-ts",
-  "version": "1.0.2",
+  "name": "expressions-ts",
+  "version": "1.0.0",
   "description": "TypeScript expressions interface",
   "main": "index.js",
   "typings": "index",
@@ -12,14 +12,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@gitlab.com/thehat/expression-ts.git"
+    "url": "https://github.com/TheHatSky/expressions-ts"
   },
   "author": "Artem Sakhatskiy",
   "license": "ISC",
   "bugs": {
-    "url": "https://gitlab.com/thehat/expression-ts/issues"
+    "url": "https://github.com/TheHatSky/expressions-ts/issues"
   },
-  "homepage": "https://gitlab.com/thehat/expression-ts#README",
+  "homepage": "https://github.com/TheHatSky/expressions-ts",
   "devDependencies": {
     "constant.ts": "^1.1.0",
     "jasmine": "^2.4.1",
