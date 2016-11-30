@@ -1,8 +1,5 @@
-/// <reference path="../../typings/tsd.d.ts" />
-
-import * as Expression from "../expression/expression";
-import * as Internals from "../expression/internals";
-import "../../lib/jasmine";
+import * as Expression from "../ts/expressions-ts";
+import * as Internals from "../ts/internals";
 
 class A
 {
