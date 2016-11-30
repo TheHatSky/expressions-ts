@@ -1,7 +1,8 @@
-Expression
-========
+[![Build Status](https://travis-ci.org/TheHatSky/expressions-ts.svg?branch=master)](https://travis-ci.org/TheHatSky/expressions-ts)
+[![Code Climate](https://codeclimate.com/github/TheHatSky/expressions-ts/badges/gpa.svg)](https://codeclimate.com/github/TheHatSky/expressions-ts)
+[![Test Coverage](https://codeclimate.com/github/TheHatSky/expressions-ts/badges/coverage.svg)](https://codeclimate.com/github/TheHatSky/expressions-ts/coverage)
 
-[![build status](https://gitlab.com/thehat/expression-ts/badges/master/build.svg)](https://gitlab.com/thehat/expression-ts/commits/master)
+# Expression
 
 TypeScript expressions interface.
 
@@ -24,8 +25,7 @@ apply<TType, TResult>(exp: Expression<TType, TResult>, target: TType) : TResult
 getProperty<TType, TResult>(exp: Expression<TType, TResult>) : string
 ```
 
-Usage
------
+## Usage
 
 ```typescript
 
