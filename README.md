@@ -25,6 +25,11 @@ apply<TType, TResult>(exp: Expression<TType, TResult>, target: TType) : TResult
 getProperty<TType, TResult>(exp: Expression<TType, TResult>) : string
 ```
 
+## Install
+```shell
+npm install --save expressions-ts
+```
+
 ## Usage
 
 ```typescript

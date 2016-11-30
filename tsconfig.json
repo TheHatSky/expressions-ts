@@ -1,11 +1,15 @@
 {
+    "compileOnSave": false,
     "compilerOptions": {
         "module": "commonjs",
-        "target": "es5",
         "noImplicitAny": true,
-        "sourceMap": false,
-        "removeComments": true,
-        "outDir": "js"
+        "outDir": "tmp",
+        "target": "es3",
+        "sourceMap": true,
+        "moduleResolution": "node",
+        "types" : [
+            "jasmine"
+        ]
     },
     "exclude": [
         "node_modules"
