@@ -1,0 +1,28 @@
+language: node_js
+node_js:
+    - "node"
+
+#addons:
+  #code_climate:
+    #repo_token: $CODE_CLIMATE_TOKEN
+
+install:
+    #- npm install karma-cli webpack typescript codeclimate-test-reporter --global
+    - npm install -g tsd typescript webpack
+    - npm install
+    - tsd install
+
+cache:
+    directories:
+        - "node_modules"
+
+script:
+    - tsc
+    - npm link typescript
+    - webpack
+    - webpack --config=webpack.test.config.js
+    - npm test
+
+#after_success:
+  #- find ./coverage -name "lcovonly" -exec cp {} ./lcov.info \;
+  #- codeclimate-test-reporter < lcov.info
