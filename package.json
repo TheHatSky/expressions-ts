@@ -3,10 +3,7 @@
   "version": "1.0.0",
   "description": "TypeScript expressions interface",
   "main": "index.js",
-  "typings": "index",
-  "directories": {
-    "test": "tests"
-  },
+  "types": "index.d.ts",
   "scripts": {
     "test": "karma start --single-run"
   },
@@ -14,8 +11,8 @@
     "type": "git",
     "url": "https://github.com/TheHatSky/expressions-ts"
   },
-  "author": "Artem Sakhatskiy",
-  "license": "ISC",
+  "author": "Artem Sakhatskiy <sakhatskiy@yahoo.com>",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/TheHatSky/expressions-ts/issues"
   },
