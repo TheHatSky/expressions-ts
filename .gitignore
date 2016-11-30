@@ -2,3 +2,11 @@
 /js/**/*.d.ts
 /typings
 /.DS_Store
+
+js/index.js
+js/tests.js
+.vscode
+typings
+*.js.map
+coverage/
+tmp/
